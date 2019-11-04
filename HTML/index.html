@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exercícios HTML</title>
+        <style>
+            #conteudo {
+                padding: 30px 0px;
+            }
+            
+            .lista {
+                display: block;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Exercícios HTML</h1>
+        <nav>
+            <a href="exercicios/teste.html">00 - teste</a>
+            <a href="exercicios/texto1.html">01 - texto</a>
+            <a href="exercicios/listas.html">02 - listas</a>
+            <a href="exercicios/link.html">03 - link</a>
+            <a href="exercicios/tabelas.html">04 - tabelas</a>
+            <a href="exercicios/form/form.html">05 - formulários</a>
+        </nav>
+        <section id="conteudo">
+
+        </section>
+
+        <footer>
+            Curso de Web Moderno
+        </footer>
+
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+                link.onclick = function(e) {
+                    e.preventDefault()
+
+                    fetch(link.href)
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html) //carrega na tag section o conteudo da pagina teste
+                }
+            })
+        </script>
+    </body>
+
+</html>

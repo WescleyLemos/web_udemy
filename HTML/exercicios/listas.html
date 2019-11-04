@@ -1,0 +1,42 @@
+<h1>
+
+    Listas</h1>
+
+<!-- Ordenadas -->
+<h2>Aprovados</h2>
+<ol>
+    <li>
+        <span wm-pasta>Bia</span>
+        <ul>
+            <li>teste</li>
+            <li>teste</li>
+        </ul>
+    </li>
+    <li>Pedro</li>
+    <li>Ana</li>
+    <li>João</li>
+</ol>
+
+<h2>Lista n ordenada</h2>
+<ul>
+    <li>teste</li>
+    <li>teste</li>
+</ul>
+
+<!-- lista de definição  -->
+<dl>
+    <dt>BaaS</dt>
+    <dd>backend como serviço</dd>
+</dl>
+
+<script>
+    document.querySelectorAll('[wm-pasta]').forEach(folder => {
+        folder.onclick = function(e) {
+            console.log('teste')
+            const ul = folder.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+
+    })
+</script>

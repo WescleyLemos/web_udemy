@@ -1,0 +1,7 @@
+{
+    "db": {
+        "host": "localost",
+        "user": "usuario",
+        "pass": "123456"
+    }
+}
